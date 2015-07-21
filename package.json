@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "iojs --use_strict start.js",
-    "test": "iojs --use_strict start.js --create create --default https://www.veltro.de/ --host dev:3000 --port 3000"
+    "test": "CREATE=create DEFAULT=https://www.veltro.de/ HOST=dev:3000 PORT=3000 iojs --use_strict start.js"
   },
   "author": "Jan Buschtöns",
   "license": "MIT",
   "dependencies": {
     "babel": "^5.6.23",
-    "lowdb": "^0.10.2",
-    "optimist": "^0.6.1"
+    "lowdb": "^0.10.2"
   }
 }

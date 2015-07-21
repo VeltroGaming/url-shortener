@@ -1,5 +1,4 @@
 import boot from './app';
-import { argv } from 'optimist';
 
 /**
  * Default port, in case none is provided.
@@ -13,9 +12,9 @@ const DEFAULT_PORT = 3000;
  */
 
 let app = boot({
-  create: argv.create,
-  defaultRedirection: argv.default,
-  host: argv.host
+  create: process.env.CREATE,
+  defaultRedirection: process.env.DEFAULT,
+  host: process.env.HOST
 });
 
 
@@ -23,4 +22,4 @@ let app = boot({
  * Start to listen for requests.
  */
 
-app.listen(argv.port || DEFAULT_PORT);
+app.listen(process.env.PORT || DEFAULT_PORT);
